@@ -2,10 +2,10 @@
 
 <!-- PROJECT LOGO -->
 
-  <h3 align="center">YOUR_TITLE</h3>
+  <h3 align="center">Geraki</h3>
 
   <p align="center">
-    YOUR_SHORT_DESCRIPTION
+    Auto Templater personalized for my type of projects.
     <br />
     <a href="https://github.com/csivitu/Template"><strong>Explore the docs »</strong></a>
     <br />
@@ -23,16 +23,16 @@
 <!-- TABLE OF CONTENTS -->
 ## Table of Contents
 
-* [About the Project](#about-the-project)
-  * [Built With](#built-with)
-* [Getting Started](#getting-started)
-  * [Prerequisites](#prerequisites)
-  * [Installation](#installation)
-* [Usage](#usage)
-* [Roadmap](#roadmap)
-* [Contributing](#contributing)
-* [License](#license)
-* [Contributors](#contributors-)
+- [Table of Contents](#table-of-contents)
+- [About The Project](#about-the-project)
+  - [Built With](#built-with)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+- [Usage](#usage)
+- [Roadmap](#roadmap)
+- [Contributing](#contributing)
+- [License](#license)
 
 
 
@@ -41,16 +41,12 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-Here's a blank template to get started:
-**To avoid retyping too much info. Do a search and replace with your text editor for the following:**
-`Template`
+
 
 
 ### Built With
 
-* []()
-* []()
-* []()
+* [Rust](https://doc.rust-lang.org/beta/)
 
 
 
@@ -61,22 +57,20 @@ To get a local copy up and running follow these simple steps.
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-```sh
-npm install npm@latest -g
-```
+ To download Rustup and install Rust, run the following in your terminal, then follow the on-screen instructions
 
+* rustup  -- linux/mac os
+```sh
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+```
+Checkout [Rust Installion Guide](https://forge.rust-lang.org/infra/other-installation-methods.html) for other Operating Systems.
 ### Installation
  
 1. Clone the repo
 ```sh
-git clone https://github.com/csivitu/Template.git
+git clone https://github.com/SubstantialCattle5/Geraki.git
 ```
-2. Install NPM packages
-```sh
-npm install
-```
+
 
 
 
@@ -119,7 +113,5 @@ Distributed under the MIT License. See [`LICENSE`](./LICENSE) for more informati
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[csivitu-shield]: https://img.shields.io/badge/csivitu-csivitu-blue
-[csivitu-url]: https://csivit.com
 [issues-shield]: https://img.shields.io/github/issues/csivitu/Template.svg?style=flat-square
 [issues-url]: https://github.com/csivitu/Template/issues
