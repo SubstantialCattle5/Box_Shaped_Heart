@@ -5,7 +5,7 @@
   <h3 align="center">Geraki</h3>
 
   <p align="center">
-    Auto Templater personalized for my type of projects.
+    Auto Templater personalized for my projects.
     <br />
     <a href="https://github.com/csivitu/Template"><strong>Explore the docs »</strong></a>
     <br />
