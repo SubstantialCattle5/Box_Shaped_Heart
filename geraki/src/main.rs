@@ -1,10 +1,10 @@
 #![allow(unused)]
 
-use std::{fs::read_to_string, io};
-
-use anyhow::{Context, Result}; // for error
-use clap::Parser; // for parsing the input
-/// Search for a pattern in a file and display the line that contain it.
+use anyhow::{Context, Ok, Result}; // for error
+use clap::Parser; // for parsing the data
+use std::process::Command; // for executing command
+use std::{fs::read_to_string, io}; // for parsing the input
+/// Creates a template file according to requirements.
 #[derive(Parser)]
 struct Cli {
     /// the name of the project
@@ -13,16 +13,40 @@ struct Cli {
     project: String,
 }
 
-fn auto_react() {
-    println!("Working on react are we...? ");
+fn auto_create_reat_app(project_name: &str) {
+    let mut name = String::from(project_name);
+    if name.len() == 0 {
+        name = String::from("Test Project");
+    }
+    println!("\nCreating React Project Env...............\n") ; 
+
+    // executing create react project
+    Command::new("npx")
+        .arg("create-react-app")
+        .arg(name)
+        .spawn()
+        .expect("create-react-app not working");
 }
-fn auto_rust_cli() {
+fn auto_tailwind_installation() {
+    // installing tailwind css
+    Command::new("npx")
+        .arg("install")
+        .arg("-D")
+        .arg("tailwindcss")
+        .arg("postcss")
+        .arg("autoprefixier")
+        .spawn()
+        .expect("unable to download tailwind css");
+}
+
+
+fn auto_rust_cli(project_name: &str) {
     println!("Working on Rust Cli are we...? ");
 }
-fn web_scrape() {
+fn web_scrape(project_name: &str) {
     println!("Working on Rust Cli are we...? ");
 }
-fn web_3() {
+fn web_3(project_name: &str) {
     println!("Working on Rust Cli are we...? ");
 }
 fn wrong_input() {
@@ -36,12 +60,11 @@ fn main() -> Result<()> {
 
     // Checking for project
     match project.trim() {
-        "react" => auto_react(),
-        "rustcli" => auto_rust_cli(),
-        "webscrape" => web_scrape(),
-        "web3" => web_3(),
+        "react" => auto_create_reat_app(&name),
+        "rustcli" => auto_rust_cli(&name),
+        "webscrape" => web_scrape(&name),
+        "web3" => web_3(&name),
         _ => wrong_input(),
     };
-
     Ok(())
 }
