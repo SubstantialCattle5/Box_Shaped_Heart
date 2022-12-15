@@ -18,7 +18,7 @@ fn auto_create_reat_app(project_name: &str) {
     if name.len() == 0 {
         name = String::from("Test Project");
     }
-    println!("\nCreating React Project Env...............\n") ; 
+    println!("\nCreating React Project Env...............\n");
 
     // executing create react project
     Command::new("npx")
@@ -27,6 +27,7 @@ fn auto_create_reat_app(project_name: &str) {
         .spawn()
         .expect("create-react-app not working");
 }
+
 fn auto_tailwind_installation() {
     // installing tailwind css
     Command::new("npx")
@@ -39,15 +40,25 @@ fn auto_tailwind_installation() {
         .expect("unable to download tailwind css");
 }
 
-
 fn auto_rust_cli(project_name: &str) {
-    println!("Working on Rust Cli are we...? ");
+    let mut name = String::from(project_name);
+    if name.len() == 0 {
+        name = String::from("Test Project");
+    }
+    println!("\nCreating Rust Env...............\n");
+
+    // executing cargo rust
+    Command::new("cargo")
+        .arg("new")
+        .arg(name)
+        .spawn()
+        .expect("cargo not working");
 }
 fn web_scrape(project_name: &str) {
     println!("Working on Rust Cli are we...? ");
 }
 fn web_3(project_name: &str) {
-    println!("Working on Rust Cli are we...? ");
+    Command::new("firefox").output().expect("Firefox not found");
 }
 fn wrong_input() {
     println!("Working on Rust Cli are we...? ");
