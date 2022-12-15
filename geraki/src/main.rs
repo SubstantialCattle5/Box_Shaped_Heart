@@ -4,7 +4,6 @@ use anyhow::{Context, Ok, Result}; // for error
 use clap::Parser; // for parsing the data
 use std::process::Command; // for executing command
 use std::{fs::read_to_string, io}; // for parsing the input
-/// Creates a template file according to requirements.
 #[derive(Parser)]
 struct Cli {
     /// the name of the project
@@ -58,7 +57,25 @@ fn web_scrape(project_name: &str) {
     println!("Working on Rust Cli are we...? ");
 }
 fn web_3(project_name: &str) {
-    Command::new("firefox").output().expect("Firefox not found");
+    
+    // creating starter template for truffle project
+    Command::new("truffle")
+        .arg("init")
+        .output()
+        .expect("Failed to Start Truffle");
+
+    // creating the contract file
+    Command::new("truffle")
+        .arg("create")
+        .arg("contract")
+        .arg(&project_name)
+        .output()
+        .expect("Failed to create new Contract");
+
+    // Running a Ganache Instance
+    Command::new("ganache")
+        .spawn()
+        .expect("Ganache -cli not working");
 }
 fn wrong_input() {
     println!("Working on Rust Cli are we...? ");
@@ -70,7 +87,7 @@ fn main() -> Result<()> {
     let project: &String = &args.project; // project type
 
     // Checking for project
-    match project.trim() {
+    match project.to_lowercase().trim() {
         "react" => auto_create_reat_app(&name),
         "rustcli" => auto_rust_cli(&name),
         "webscrape" => web_scrape(&name),
