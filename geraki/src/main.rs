@@ -1,9 +1,21 @@
 #![allow(unused)]
-
 use anyhow::{Context, Ok, Result}; // for error
 use clap::Parser; // for parsing the data
 use std::process::Command; // for executing command
 use std::{fs::read_to_string, io}; // for parsing the input
+
+/// Welcome to Geraki!
+///
+///
+///
+///
+///
+///
+///
+///
+///
+///
+///
 #[derive(Parser)]
 struct Cli {
     /// the name of the project
@@ -18,7 +30,7 @@ fn auto_create_reat_app(project_name: &str) {
         name = String::from("Test Project");
     }
     println!("\nCreating React Project Env...............\n");
-
+    open_vs_code();
     // executing create react project
     Command::new("npx")
         .arg("create-react-app")
@@ -26,7 +38,13 @@ fn auto_create_reat_app(project_name: &str) {
         .spawn()
         .expect("create-react-app not working");
 }
-
+fn open_vs_code() {
+    // Opening VS code
+    Command::new("code")
+        .arg(".")
+        .spawn()
+        .expect("VS code not Opening");
+}
 fn auto_tailwind_installation() {
     // installing tailwind css
     Command::new("npx")
@@ -36,16 +54,15 @@ fn auto_tailwind_installation() {
         .arg("postcss")
         .arg("autoprefixier")
         .spawn()
-        .expect("unable to download tailwind css");
+        .expect("unable to install, tailwind css");
 }
-
 fn auto_rust_cli(project_name: &str) {
     let mut name = String::from(project_name);
     if name.len() == 0 {
         name = String::from("Test Project");
     }
     println!("\nCreating Rust Env...............\n");
-
+    open_vs_code();
     // executing cargo rust
     Command::new("cargo")
         .arg("new")
@@ -54,10 +71,9 @@ fn auto_rust_cli(project_name: &str) {
         .expect("cargo not working");
 }
 fn web_scrape(project_name: &str) {
-    println!("Working on Rust Cli are we...? ");
+    println!("Working on WebScrape are we...? ");
 }
 fn web_3(project_name: &str) {
-    
     // creating starter template for truffle project
     Command::new("truffle")
         .arg("init")
@@ -71,17 +87,29 @@ fn web_3(project_name: &str) {
         .arg(&project_name)
         .output()
         .expect("Failed to create new Contract");
-
+    open_vs_code();
     // Running a Ganache Instance
     Command::new("ganache")
         .spawn()
         .expect("Ganache -cli not working");
 }
 fn wrong_input() {
-    println!("Working on Rust Cli are we...? ");
+    println!("Input not recognized");
 }
-
+fn welcome() {
+    println!(
+        "\n
+    ░██████╗░███████╗██████╗░░█████╗░██╗░░██╗██╗██╗██╗██╗██╗
+    ██╔════╝░██╔════╝██╔══██╗██╔══██╗██║░██╔╝██║██║██║██║██║
+    ██║░░██╗░█████╗░░██████╔╝███████║█████═╝░██║██║██║██║██║
+    ██║░░╚██╗██╔══╝░░██╔══██╗██╔══██║██╔═██╗░██║╚═╝╚═╝╚═╝╚═╝
+    ╚██████╔╝███████╗██║░░██║██║░░██║██║░╚██╗██║██╗██╗██╗██╗
+    ░╚═════╝░╚══════╝╚═╝░░╚═╝╚═╝░░╚═╝╚═╝░░╚═╝╚═╝╚═╝╚═╝╚═╝╚═╝\n"
+    );
+}
 fn main() -> Result<()> {
+    welcome();
+
     let args: Cli = Cli::parse();
     let name: &String = &args.name; // name of the project
     let project: &String = &args.project; // project type
