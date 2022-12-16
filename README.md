@@ -2,10 +2,10 @@
 
 <!-- PROJECT LOGO -->
 
-  <h3 align="center">Geraki</h3>
+  <h3 align="center">Box Shaped Heart</h3>
 
   <p align="center">
-    Auto Templater personalized for my projects.
+    Collection of Projects making my life easier .
     <br />
     <a href="https://github.com/csivitu/Template"><strong>Explore the docs »</strong></a>
     <br />
