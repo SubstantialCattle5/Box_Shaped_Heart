@@ -68,7 +68,7 @@ Checkout [Rust Installion Guide](https://forge.rust-lang.org/infra/other-install
  
 1. Clone the repo
 ```sh
-git clone https://github.com/SubstantialCattle5/Geraki.git
+git clone https://github.com/SubstantialCattle5/Box_Shaped_Heart.git
 ```
 
 
