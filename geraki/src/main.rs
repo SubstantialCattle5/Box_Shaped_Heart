@@ -5,22 +5,37 @@ use std::process::Command; // for executing command
 use std::{fs::read_to_string, io}; // for parsing the input
 
 /// Welcome to Geraki!
+/// Sets up the inital folder for your sexy project ideas
 ///
+/// Currently supports -
+/// 1. React
+/// 2. Rust
+/// 3. WebScrape
+/// 4. Web3
 ///
-///
-///
-///
-///
-///
-///
-///
-///
-///
+/// React - 
+///     Executes :
+///         create-react-app <projectname>
+/// 
+/// Rust - 
+///     Executes : 
+///          cargo new <projectname>
+/// 
+/// WebScrape - 
+///     Executes : 
+///         Wishes you best of luck :) 
+///    
+/// Web3 - 
+///     Executes : 
+///         initiliazes truffle  
+///         creates a contract 
+///         executes ganache-cli 
+
 #[derive(Parser)]
 struct Cli {
     /// the name of the project
     name: String,
-    /// type of project react/rust-cli/webscrape/web3
+    /// type of project react/rust/webscrape/web3
     project: String,
 }
 
@@ -104,7 +119,7 @@ fn welcome() {
     ██║░░██╗░█████╗░░██████╔╝███████║█████═╝░██║██║██║██║██║
     ██║░░╚██╗██╔══╝░░██╔══██╗██╔══██║██╔═██╗░██║╚═╝╚═╝╚═╝╚═╝
     ╚██████╔╝███████╗██║░░██║██║░░██║██║░╚██╗██║██╗██╗██╗██╗
-    ░╚═════╝░╚══════╝╚═╝░░╚═╝╚═╝░░╚═╝╚═╝░░╚═╝╚═╝╚═╝╚═╝╚═╝╚═╝\n"
+    ░╚═════╝░╚══════╝╚═╝░░╚═╝╚═╝░░╚═╝╚═╝░░╚═╝╚═╝╚═╝╚═╝╚═╝╚═╝\n\n\n\n"
     );
 }
 fn main() -> Result<()> {
