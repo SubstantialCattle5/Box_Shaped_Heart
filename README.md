@@ -5,7 +5,7 @@
   <h3 align="center">Box Shaped Heart</h3>
 
   <p align="center">
-    Collection of Projects making my life easier .
+    Collection of cli tools making my life easier .
     <br />
     <a href="https://github.com/csivitu/Template"><strong>Explore the docs »</strong></a>
     <br />
